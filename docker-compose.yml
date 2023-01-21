@@ -1,0 +1,44 @@
+version: '3.8'
+services:
+  nginx: 
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mi_nginx
+    restart: always
+    environment:
+      MYVARIABLE: "PORT"
+    ports:
+      - 8081:80
+    volumes:
+      - ./sudoku/:/usr/share/nginx/html
+    networks:
+      nginx_network: # este es un nombre cualquiera
+        aliases:
+          - nginx_host
+
+  nginx2: #172.31.0.3/16
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mi_2nginx
+    restart: always
+    environment:
+      MYVARIABLE: "DB_NAME"
+    ports:
+      - 8180:80
+    volumes:
+      - ./html/:/usr/share/nginx/html
+    networks:
+      nginx_network: # este es un nombre cualquiera
+        aliases:
+          - nginx2_host
+volumes:
+  html: {}
+  html2: {}
+networks:
+  nginx_network:
+    name: nginx_net
+    driver: bridge
+    ipam:
+      driver: default

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Sudoku</title>
+</head>
+<body>
+  <div id="particles-js"></div>
+  
+  <div id="container">
+    <div class="col1">
+      <h1 id="title" >Sudoku</h1>
+      <hr />
+      <div id="tablero"></div>
+      <div id="numeros"></div>
+
+      
+    </div>
+    
+    <div id="info">
+      <h3>Puedes cometer solo 10 erroresssss</h3>
+      <div id="puntaje">Errores</div>
+      <div id="errors">0</div>
+      <button id="btn-reset" type="button" class="btn-reset" >RESET</button>
+
+    </div>
+  </div>
+    
+
+  <!--MODAL-->
+  <section class="modal ">
+    <div class="modal__container">
+        <img src="Game-Over.png" class="modal__img">
+        <h2 class="modal__title">¡Juego terminado!</h2>
+        <p class="modal__paragraph">Has tenido 10 errores.</p>
+        <a href="#" class="modal__close">Jugar otra vez</a>
+    </div>
+</section>
+    <!--js particulas-->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script> -->
+    <script src="particles.min.js"></script>
+    <script src="./script.js" type="module" ></script>
+  
+</body>
+</html>
