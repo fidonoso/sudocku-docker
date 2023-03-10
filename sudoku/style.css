@@ -24,13 +24,17 @@ body{
   display: flex;
   margin: 0 auto;
   margin-left: 70px;
+  /* position: relative; */
 }
 #info{
   display: flex;
+  /* display: none; */
   margin: 0 auto;
   flex-direction: column;
   margin-right: 400px;
   margin-top: 90px;
+  /* position: absolute; */
+
   /* z-index:99;
   position: relative; */
 
@@ -232,4 +236,17 @@ align-items: flex-start;
   0% {background-position: 0% 50%;}
   50% {background-position: 100% 50%;}
   100% {background-position: 0% 50%;}
+}
+
+
+@media (max-width: 768px) {
+  #container{
+    /* position: relative;
+    align-items: flex-end; */
+    flex-direction: column;
+  }
+  #info {
+    display: block;
+    position: static;
+  }
 }
